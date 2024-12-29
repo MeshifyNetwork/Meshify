@@ -1,0 +1,160 @@
+client/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── Header.js
+│   │   ├── Footer.js
+│   │   └── CharacterCard.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   └── About.js
+│   ├── App.js
+│   ├── index.js
+│   └── styles.css
+├── package.json
+├── .gitignore
+└── README.md
+
+cd your-project-folder
+
+mkdir client
+cd client
+
+npx create-react-app .
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meshify</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script src="index.js" defer></script>
+</body>
+</html>
+
+import React from 'react';
+import './styles.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <Home />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
+
+import React from 'react';
+
+function Header() {
+  return (
+    <header>
+      <h1>Meshify</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+  );
+}
+
+export default Header;
+
+import React from 'react';
+
+function Footer() {
+  return (
+    <footer>
+      <p>&copy; 2024 Meshify. All rights reserved.</p>
+    </footer>
+  );
+}
+
+export default Footer;
+
+import React from 'react';
+import CharacterCard from '../components/CharacterCard';
+
+function Home() {
+  const characters = [
+    { name: 'Synthesis Sam', role: 'Processes raw data into insights' },
+    { name: 'Predictive Petra', role: 'Provides predictive analytics' },
+    { name: 'Ethica Eve', role: 'Ensures ethical decision-making' },
+  ];
+
+  return (
+    <main>
+      <h2>Welcome to Meshify</h2>
+      <section>
+        {characters.map((char, index) => (
+          <CharacterCard key={index} name={char.name} role={char.role} />
+        ))}
+      </section>
+    </main>
+  );
+}
+
+export default Home;
+
+import React from 'react';
+
+function CharacterCard({ name, role }) {
+  return (
+    <div className="character-card">
+      <h3>{name}</h3>
+      <p>{role}</p>
+    </div>
+  );
+}
+
+export default CharacterCard;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #282c34;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 1em;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #282c34;
+  color: white;
+  padding: 1em;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.character-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+}
