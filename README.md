@@ -82,3 +82,18 @@ git push origin feature/your-feature-name
   5. Open a pull request.
 ```
 
+### License
+This project is licensed under:
+```bash
+GNU Affero General Public License v3.0
+```
+
+### Contact
+For questions or feedback, please reach out to our team at:
+```bash
+https://x.com/MeshifyAI
+```
+
+### Acknowledgements
+We thank all contributors, partners, and community members for their support in making Meshify a reality.
+```
