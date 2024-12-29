@@ -1,0 +1,68 @@
+.vscode/
+├── settings.json
+├── extensions.json
+└── launch.json
+
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true
+  },
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "eslint.validate": ["javascript", "typescript"],
+  "python.pythonPath": "path/to/your/python", 
+  "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true
+}
+
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ms-python.python",
+    "ms-vscode.vscode-typescript-next",
+    "ms-azuretools.vscode-docker"
+  ]
+}
+
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Node.js App",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/index.js",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python: Flask",
+      "type": "python",
+      "request": "launch",
+      "module": "flask",
+      "env": {
+        "FLASK_APP": "app.py",
+        "FLASK_ENV": "development"
+      },
+      "args": ["run"],
+      "jinja": true
+    },
+    {
+      "name": "Docker: Debug",
+      "type": "docker",
+      "request": "launch",
+      "platform": "node",
+      "dockerServerReadyAction": {
+        "action": "openExternally",
+        "pattern": "listening on port ([0-9]+)"
+      }
+    }
+  ]
+}
