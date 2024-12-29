@@ -96,4 +96,3 @@ https://x.com/MeshifyAI
 
 ### Acknowledgements
 We thank all contributors, partners, and community members for their support in making Meshify a reality.
-```
